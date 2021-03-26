@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B549F83260DE1940028042D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B549F82260DE1940028042D /* GradientView.swift */; };
 		3B9DAC8F260D400700CEC48C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9DAC8E260D400700CEC48C /* AppDelegate.swift */; };
 		3B9DAC91260D400700CEC48C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9DAC90260D400700CEC48C /* SceneDelegate.swift */; };
 		3B9DAC96260D400700CEC48C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B9DAC94260D400700CEC48C /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B549F82260DE1940028042D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		3B9DAC8B260D400700CEC48C /* smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B9DAC8E260D400700CEC48C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B9DAC90260D400700CEC48C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		3BC0FA5C260D543E000ECA9E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3B549F82260DE1940028042D /* GradientView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			files = (
 				3BC0FA5F260D5462000ECA9E /* ChatVC.swift in Sources */,
 				3B9DAC8F260D400700CEC48C /* AppDelegate.swift in Sources */,
+				3B549F83260DE1940028042D /* GradientView.swift in Sources */,
 				3B9DAC91260D400700CEC48C /* SceneDelegate.swift in Sources */,
 				3BC0FA53260D40F5000ECA9E /* SWRevealViewController.m in Sources */,
 				3BC0FA62260D5479000ECA9E /* ChannelVC.swift in Sources */,
