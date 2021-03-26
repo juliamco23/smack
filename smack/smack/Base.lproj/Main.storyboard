@@ -189,6 +189,7 @@
                                 <rect key="frame" x="363" y="67" width="28" height="28"/>
                                 <state key="normal" image="closeButton"/>
                                 <connections>
+                                    <action selector="closeBtnPressed:" destination="TYU-Jt-9fa" eventType="touchUpInside" id="GvD-hV-C5c"/>
                                     <action selector="closePressed:" destination="TYU-Jt-9fa" eventType="touchUpInside" id="VPc-mm-3tO"/>
                                 </connections>
                             </button>
@@ -202,6 +203,9 @@
                                 <state key="normal" title="Don't have an account? Sing up here">
                                     <color key="titleColor" red="0.17254901959999999" green="0.83137254900000002" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccntBtnPressed:" destination="TYU-Jt-9fa" eventType="touchUpInside" id="k24-xK-hAj"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="FMD-k5-Ryi">
                                 <rect key="frame" x="82" y="199" width="250" height="114"/>
@@ -286,10 +290,29 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UZL-Xi-3Gt"/>
+                    <connections>
+                        <segue destination="R4L-u9-Vf9" kind="show" identifier="toCreateAccount" id="ujI-lo-QwM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JfX-xv-cmK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1863.7681159420292" y="-327.45535714285711"/>
+            <point key="canvasLocation" x="1910" y="-327"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gkb-xz-UCf">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="R4L-u9-Vf9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="34D-v1-03D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dLc-8S-VCx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9sx-AY-hrO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BPA-lp-12U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2814" y="-327"/>
         </scene>
     </scenes>
     <resources>
