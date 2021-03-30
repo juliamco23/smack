@@ -19,12 +19,22 @@ class CreateAccountVC: UIViewController {
         super.viewDidLoad()
         
     }
-    @IBAction func createAccntPressed(_ sender: Any) {
     
+    @IBAction func createAccntPressed(_ sender: Any) {
+        guard let email = emailTxt.text , emailTxt.text != "" else { return }
+        guard let pass = passTxt.text , passTxt.text != "" else { return }
+        
+        AuthService.instance.registerUser(email: email, password: pass) { (success) in
+            if success {
+                print("register user!")
+            }
+        }
     }
     @IBAction func pickBGColorpressed(_ sender: Any) {
+        
     }
     @IBAction func pickAvaterPressed(_ sender: Any) {
+        
     }
     @IBAction func closeBtnPressed(_ sender: Any) {
        performSegue(withIdentifier: UNWIND, sender: nil)

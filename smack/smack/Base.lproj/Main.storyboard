@@ -393,7 +393,7 @@
                                             <constraint firstAttribute="width" constant="250" id="gw4-pp-44F"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xst-Bb-ZS5">
                                         <rect key="frame" x="0.0" y="176" width="250" height="2"/>
