@@ -64,12 +64,6 @@ class AuthService {
             case let .failure(error):
                 print(error)
             }
-//
-//            if response.result.error == nil {
-//                completion(true)
-//            } else {
-//                completion(false)
-//                debugPrint(response.result.error as Any)
         }
     }
     
