@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B0CE99A2611FA110036646E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0CE9992611FA110036646E /* AuthService.swift */; };
 		3B549F83260DE1940028042D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B549F82260DE1940028042D /* GradientView.swift */; };
 		3B549F88260E48180028042D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B549F87260E48180028042D /* Constants.swift */; };
 		3B549F8B260E58C60028042D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B549F8A260E58C60028042D /* LoginVC.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B0CE9992611FA110036646E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		3B549F82260DE1940028042D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		3B549F87260E48180028042D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3B549F8A260E58C60028042D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B0CE9972611F9F30036646E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3B0CE9992611FA110036646E /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		3B549F85260E47EE0028042D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +95,7 @@
 		3B9DAC8D260D400700CEC48C /* smack */ = {
 			isa = PBXGroup;
 			children = (
+				3B0CE9972611F9F30036646E /* Services */,
 				3B549F85260E47EE0028042D /* Utilities */,
 				3BC0FA5D260D5445000ECA9E /* Model */,
 				3BC0FA5C260D543E000ECA9E /* View */,
@@ -275,6 +286,7 @@
 				3B9DAC91260D400700CEC48C /* SceneDelegate.swift in Sources */,
 				3B549F92260E716A0028042D /* CreateAccountVC.swift in Sources */,
 				3B549F88260E48180028042D /* Constants.swift in Sources */,
+				3B0CE99A2611FA110036646E /* AuthService.swift in Sources */,
 				3BC0FA53260D40F5000ECA9E /* SWRevealViewController.m in Sources */,
 				3BC0FA62260D5479000ECA9E /* ChannelVC.swift in Sources */,
 			);

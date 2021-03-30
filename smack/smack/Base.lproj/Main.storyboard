@@ -78,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6iX-Ty-qGS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="976.81159420289862" y="421.875"/>
+            <point key="canvasLocation" x="977" y="421"/>
         </scene>
         <!--ChannelVC-->
         <scene sceneID="ruW-yJ-BUI">
@@ -325,6 +325,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createAccntBtnPressed:" destination="TYU-Jt-9fa" eventType="touchUpInside" id="1op-xM-Bf6"/>
+                                    <action selector="pickAvaterPressed:" destination="R4L-u9-Vf9" eventType="touchUpInside" id="a69-IH-wtp"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CM-7k-FNa">
@@ -343,6 +344,9 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" red="0.87326656729999996" green="0.88191277089999998" blue="0.88191277089999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccntPressed:" destination="R4L-u9-Vf9" eventType="touchUpInside" id="3Ka-vx-les"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="OTk-xq-JOg">
                                 <rect key="frame" x="82" y="182" width="250" height="178"/>
@@ -422,6 +426,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createAccntBtnPressed:" destination="TYU-Jt-9fa" eventType="touchUpInside" id="aO3-1Y-iEv"/>
+                                    <action selector="pickBGColorpressed:" destination="R4L-u9-Vf9" eventType="touchUpInside" id="ZWc-zB-zII"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -447,6 +452,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="9sx-AY-hrO"/>
                     <connections>
+                        <outlet property="emailTxt" destination="Mpa-iA-hRd" id="kEB-Nf-S1p"/>
+                        <outlet property="passTxt" destination="bJc-3q-9dV" id="p8j-4N-Abv"/>
+                        <outlet property="userImg" destination="av4-CA-bFY" id="qGz-xR-zYP"/>
+                        <outlet property="usernameTxt" destination="5re-9k-8bW" id="Ey7-ra-ywZ"/>
                         <segue destination="8YO-5j-Y92" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="Ipv-u6-hhu"/>
                     </connections>
                 </viewController>
