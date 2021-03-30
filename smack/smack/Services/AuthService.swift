@@ -14,7 +14,7 @@ class AuthService {
     
     let defaults = UserDefaults.standard
     
-    var isLoggeedIn : Bool {
+    var isLoggedIn : Bool {
         get {
             return defaults.bool(forKey: LOGGED_IN_KEY)
         }
@@ -67,4 +67,45 @@ class AuthService {
         }
     }
     
+    func loginUser(email: String, password: String, completion: @escaping CompletionHandler) {
+    
+        let lowerCaseEmail = email.lowercased()
+        
+        let header: HTTPHeaders = [
+            "Authorization": "Basic MY-API-KEY",
+            "Content-Type": "application/json; charset=utf-8"
+        ]
+        
+        let body: [String: Any] = [
+            "email": lowerCaseEmail,
+            "password": password
+        ]
+        
+        AF.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+        
+            if response.result.error == nil {
+                if let json = response.result.error as? Dictionary<String, Any> {
+                    if let email = json["user"] as? String {
+                        self.userEmail = email
+                    }
+                    if let token = json["token"] as? String {
+                        self.authToken = token
+                    }
+                }
+                self.isLoggedIn = true
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            
+            switch response.result {
+            case let .success(value):
+                print(value)
+            case let .failure(error):
+                print(error)
+            }
+    }
+}
+
+    }
 }
