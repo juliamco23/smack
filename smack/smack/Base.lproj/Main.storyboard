@@ -261,7 +261,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJI-ph-fTY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJI-ph-fTY" customClass="RoundedButton" customModule="smack" customModuleProvider="target">
                                 <rect key="frame" x="82" y="359" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509803922" green="0.62352941176470589" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -271,6 +271,13 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.87326656729999996" green="0.88191277089999998" blue="0.88191277089999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="RoundedButton" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qbj-4w-vfV"/>
@@ -334,7 +341,7 @@
                                 <color key="textColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZn-7y-tOJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZn-7y-tOJ" customClass="RoundedButton" customModule="smack" customModuleProvider="target">
                                 <rect key="frame" x="82" y="789" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -344,6 +351,12 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" red="0.87326656729999996" green="0.88191277089999998" blue="0.88191277089999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="RoundedButton" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="createAccntPressed:" destination="R4L-u9-Vf9" eventType="touchUpInside" id="3Ka-vx-les"/>
                                 </connections>
@@ -465,6 +478,14 @@
             <point key="canvasLocation" x="2813.04347826087" y="-327.45535714285711"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="VJI-ph-fTY">
+            <size key="intrinsicContentSize" width="38" height="30"/>
+        </designable>
+        <designable name="cZn-7y-tOJ">
+            <size key="intrinsicContentSize" width="107" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="addChannelButton" width="22" height="22"/>
         <image name="closeButton" width="28" height="28"/>
