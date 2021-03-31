@@ -83,20 +83,21 @@ class AuthService {
         
         AF.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
         
-            if response.result.error == nil {
-                if let json = response.result.error as? Dictionary<String, Any> {
-                    if let email = json["user"] as? String {
-                        self.userEmail = email
+            switch response.result {
+                  case .success(let result):
+                    if let json = result as? Dictionary<String, Any> {
+                        if let email = json["user"] as? String {
+                            self.userEmail = email
+                        }
+                        if let token = json["token"] as? String {
+                            self.authToken = token
+                        }
                     }
-                    if let token = json["token"] as? String {
-                        self.authToken = token
-                    }
-                }
-                self.isLoggedIn = true
-                completion(true)
-            } else {
-                completion(false)
-                debugPrint(response.result.error as Any)
+                    self.isLoggedIn = true
+                    completion(true)
+                  case .failure(let error):
+                    completion(false)
+                    debugPrint(error)
             
             switch response.result {
             case let .success(value):
