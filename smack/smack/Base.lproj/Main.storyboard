@@ -231,7 +231,7 @@
                                             <constraint firstAttribute="width" constant="250" id="7cI-Ln-Syv"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNj-x7-WQC">
                                         <rect key="frame" x="0.0" y="112" width="250" height="2"/>
@@ -278,6 +278,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="LoginBtnPressed:" destination="TYU-Jt-9fa" eventType="touchUpInside" id="Xqm-az-aHi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qbj-4w-vfV"/>
@@ -371,7 +374,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="mcZ-pE-QMW"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="username"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLQ-aa-xJw">
                                         <rect key="frame" x="0.0" y="48" width="250" height="2"/>
@@ -389,7 +392,7 @@
                                             <constraint firstAttribute="width" constant="250" id="sGq-NN-z6t"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghd-RB-cYo">
                                         <rect key="frame" x="0.0" y="112" width="250" height="2"/>

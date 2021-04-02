@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class AuthService {
     
@@ -98,6 +99,8 @@ class AuthService {
                   case .failure(let error):
                     completion(false)
                     debugPrint(error)
+                     
+                    }
             
             switch response.result {
             case let .success(value):
@@ -108,5 +111,48 @@ class AuthService {
     }
 }
 
-    }
+        
+        func createUser(name: String, email: String, avatarName: String, avatarcolor: String, completion: @escaping CompletionHandler) {
+            
+            let lowerCaseEmail = email.lowercased()
+            
+            let body: [String: Any] = [
+                "name": name,
+                "email": lowerCaseEmail,
+                "avatarName": avatarName,
+                "avatarColor": avatarcolor
+         ]
+            let header: HTTPHeaders = [
+            "Authorization":"Bearer\(AuthService.instance.authToken)",
+            "Content-Type": "application/json; charset=utf-8"
+           ]
+            
+        AF.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+            
+            switch response.result {
+                    case .success(let result):
+                        if result is Data {
+                          guard let data = response.data else { return }
+                          do {
+                              let json = try JSON(data: data)
+                              let id = json["_id"].stringValue
+                              let avatarName = json["avatarName"].stringValue
+                              let email = json["email"].stringValue
+                              let name = json["name"].stringValue
+                              let avatarcolor = json["avatarColor"].stringValue
+                            UserDataService.instance.setUserData(id: id, avatarName: avatarName, email: email, name: name, color: avatarcolor)
+                              completion(true)
+                          } catch {
+                              print(error)
+                              completion(false)
+                          }
+                      }
+
+            case .failure( _):
+                          completion(false)
+                          debugPrint(response.result as Any)
+                        }
+                }
+       }
 }
+            
