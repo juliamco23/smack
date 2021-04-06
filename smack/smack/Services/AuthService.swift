@@ -48,7 +48,6 @@ class AuthService {
         
         
         let header: HTTPHeaders = [
-            "Authorization": "Basic MY-API-KEY",
             "Content-Type": "application/json; charset=utf-8"
         ]
         
@@ -73,7 +72,6 @@ class AuthService {
         let lowerCaseEmail = email.lowercased()
         
         let header: HTTPHeaders = [
-            "Authorization": "Basic MY-API-KEY",
             "Content-Type": "application/json; charset=utf-8"
         ]
         
@@ -108,11 +106,10 @@ class AuthService {
             case let .failure(error):
                 print(error)
             }
+        }
     }
-}
 
-        
-        func createUser(name: String, email: String, avatarName: String, avatarcolor: String, completion: @escaping CompletionHandler) {
+    func createUser(name: String, email: String, avatarName: String, avatarcolor: String, completion: @escaping CompletionHandler) {
             
             let lowerCaseEmail = email.lowercased()
             
@@ -121,11 +118,11 @@ class AuthService {
                 "email": lowerCaseEmail,
                 "avatarName": avatarName,
                 "avatarColor": avatarcolor
-         ]
-            let header: HTTPHeaders = [
-            "Authorization":"Bearer\(AuthService.instance.authToken)",
+        ]
+        let header: HTTPHeaders = [
+            "Authorization": "Bearer\(AuthService.instance.authToken)",
             "Content-Type": "application/json; charset=utf-8"
-           ]
+        ]
             
         AF.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             
@@ -136,12 +133,14 @@ class AuthService {
                           do {
                               let json = try JSON(data: data)
                               let id = json["_id"].stringValue
+                              let name = json["name"].stringValue
                               let avatarName = json["avatarName"].stringValue
                               let email = json["email"].stringValue
-                              let name = json["name"].stringValue
-                              let avatarcolor = json["avatarColor"].stringValue
-                            UserDataService.instance.setUserData(id: id, avatarName: avatarName, email: email, name: name, color: avatarcolor)
+                              let color = json["avatarColor"].stringValue
+                            
+                            UserDataService.instance.setUserData(id: id, avatarName: avatarName, email: email, name: name, color: color)
                               completion(true)
+                              print("name")
                           } catch {
                               print(error)
                               completion(false)
@@ -151,8 +150,9 @@ class AuthService {
             case .failure( _):
                           completion(false)
                           debugPrint(response.result as Any)
-                        }
-                }
-       }
+                         }
+            }
+    }
 }
-            
+    
+//AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarcolor: self.avatarColor) { (success) in

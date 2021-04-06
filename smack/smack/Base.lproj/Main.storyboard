@@ -72,6 +72,7 @@
                             <constraint firstItem="KG2-xd-XqO" firstAttribute="centerX" secondItem="K0g-4a-WNk" secondAttribute="centerX" id="wt8-0R-2bj"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="AyB-cc-bRQ"/>
                     <connections>
                         <outlet property="menuBtn" destination="JwN-ON-4a9" id="jSN-ml-zuc"/>
                     </connections>
@@ -83,7 +84,7 @@
         <!--ChannelVC-->
         <scene sceneID="ruW-yJ-BUI">
             <objects>
-                <viewController id="IxL-o5-gvj" customClass="ChannelVC" customModule="smack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="IxL-o5-gvj" customClass="ChannelVC" customModule="smack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pta-jp-zMJ" customClass="GradientView" customModule="smack" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,6 +169,7 @@
                             <constraint firstItem="AxE-jl-KF0" firstAttribute="leading" secondItem="3qX-g0-qcN" secondAttribute="leading" constant="23" id="y0G-DC-DDs"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="SBK-qu-haz"/>
                     <connections>
                         <outlet property="loginBtn" destination="IdL-wL-qPN" id="6M1-s4-p8x"/>
                         <segue destination="TYU-Jt-9fa" kind="show" identifier="toLogin" id="qsK-B0-PM7"/>
@@ -261,7 +263,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJI-ph-fTY" customClass="RoundedButton" customModule="smack" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJI-ph-fTY" customClass="RoundedButton" customModule="smack">
                                 <rect key="frame" x="82" y="359" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509803922" green="0.62352941176470589" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -271,13 +273,6 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.87326656729999996" green="0.88191277089999998" blue="0.88191277089999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="RoundedButton" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="LoginBtnPressed:" destination="TYU-Jt-9fa" eventType="touchUpInside" id="Xqm-az-aHi"/>
                                 </connections>
@@ -300,12 +295,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="UZL-Xi-3Gt"/>
                     <connections>
+                        <outlet property="emailTxt" destination="eYn-6C-TRQ" id="dhj-bu-eu9"/>
+                        <outlet property="passTxt" destination="QO9-iq-CdM" id="3Gh-mM-RSh"/>
                         <segue destination="R4L-u9-Vf9" kind="show" identifier="toCreateAccount" id="ujI-lo-QwM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JfX-xv-cmK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1910" y="-327"/>
+            <point key="canvasLocation" x="1846" y="-327"/>
         </scene>
         <!--Create AccountVC-->
         <scene sceneID="gkb-xz-UCf">
@@ -320,8 +317,6 @@
                                 <state key="normal" image="closeButton"/>
                                 <connections>
                                     <action selector="closeBtnPressed:" destination="R4L-u9-Vf9" eventType="touchUpInside" id="7W8-dq-zZv"/>
-                                    <action selector="closeBtnPressed:" destination="TYU-Jt-9fa" eventType="touchUpInside" id="f1w-3t-JMY"/>
-                                    <action selector="closePressed:" destination="TYU-Jt-9fa" eventType="touchUpInside" id="zpP-XA-5XW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5r9-Sx-br1">
@@ -354,13 +349,8 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" red="0.87326656729999996" green="0.88191277089999998" blue="0.88191277089999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="RoundedButton" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="createAccntCloseSegue:" destination="R4L-u9-Vf9" eventType="touchUpInside" id="024-nj-Z9F"/>
                                     <action selector="createAccntPressed:" destination="R4L-u9-Vf9" eventType="touchUpInside" id="3Ka-vx-les"/>
                                 </connections>
                             </button>
@@ -473,12 +463,13 @@
                         <outlet property="userImg" destination="av4-CA-bFY" id="qGz-xR-zYP"/>
                         <outlet property="usernameTxt" destination="5re-9k-8bW" id="Ey7-ra-ywZ"/>
                         <segue destination="8YO-5j-Y92" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="Ipv-u6-hhu"/>
+                        <segue destination="8YO-5j-Y92" kind="unwind" identifier="unwindToChannel1" unwindAction="prepareForUnwind1WithSegue:" id="wZ6-Xy-569"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPA-lp-12U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="8YO-5j-Y92" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2813.04347826087" y="-327.45535714285711"/>
+            <point key="canvasLocation" x="2841" y="-327"/>
         </scene>
     </scenes>
     <designables>

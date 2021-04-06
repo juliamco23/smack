@@ -19,6 +19,7 @@ let URL_USER_ADD = "\(BASE_URL)user/add"
 let TO_LOGIN = "toLogin"
 let TO_CREATE_ACCOUNT = "toCreateAccount"
 let UNWIND = "unwindToChannel"
+let UNWIND1 = "unwindToChannel1"
 
 
 //User Defaults
@@ -28,5 +29,7 @@ let USER_EMAIL = "userEmail"
 
 // Headers
 let HEADER = [
-        "Content-Type": "application/json; charset=utf-8"
+    "Content-Type": "application/json; charset=utf-8"
 ]
+
+
