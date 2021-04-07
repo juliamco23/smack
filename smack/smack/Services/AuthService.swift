@@ -109,7 +109,7 @@ class AuthService {
         }
     }
 
-    func createUser(name: String, email: String, avatarName: String, avatarcolor: String, completion: @escaping CompletionHandler) {
+    func createUser(name: String, email: String, avatarName: String, avatarColor: String, completion: @escaping CompletionHandler) {
             
             let lowerCaseEmail = email.lowercased()
             
@@ -117,7 +117,7 @@ class AuthService {
                 "name": name,
                 "email": lowerCaseEmail,
                 "avatarName": avatarName,
-                "avatarColor": avatarcolor
+                "avatarColor": avatarColor
         ]
         let header: HTTPHeaders = [
             "Authorization": "Bearer\(AuthService.instance.authToken)",
@@ -133,14 +133,14 @@ class AuthService {
                           do {
                               let json = try JSON(data: data)
                               let id = json["_id"].stringValue
-                              let name = json["name"].stringValue
                               let avatarName = json["avatarName"].stringValue
                               let email = json["email"].stringValue
+                              let name = json["name"].stringValue
                               let color = json["avatarColor"].stringValue
                             
                             UserDataService.instance.setUserData(id: id, avatarName: avatarName, email: email, name: name, color: color)
                               completion(true)
-                              print("name")
+                              print("NOME")
                           } catch {
                               print(error)
                               completion(false)
@@ -154,5 +154,3 @@ class AuthService {
             }
     }
 }
-    
-//AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarcolor: self.avatarColor) { (success) in

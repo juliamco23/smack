@@ -34,7 +34,7 @@ class CreateAccountVC: UIViewController {
             if success {
                 AuthService.instance.loginUser(email: email, password: pass) { (success) in
                     if success {
-                        AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarcolor: self.avatarColor) { (success) in
+                        AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor) { (success) in
                             if success {
                                 print(UserDataService.instance.name, UserDataService.instance.avatarName)
                             }
@@ -48,7 +48,8 @@ class CreateAccountVC: UIViewController {
     @IBAction func pickBGColorpressed(_ sender: Any) {
     }
     
-    @IBAction func pickAvaterPressed(_ sender: Any) {
+    @IBAction func pickAvatarPressed(_ sender: Any) {
+        performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
     }
     
     @IBAction func closeBtnPressed(_ sender: Any) {

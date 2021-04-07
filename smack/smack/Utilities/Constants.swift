@@ -20,6 +20,7 @@ let TO_LOGIN = "toLogin"
 let TO_CREATE_ACCOUNT = "toCreateAccount"
 let UNWIND = "unwindToChannel"
 let UNWIND1 = "unwindToChannel1"
+let TO_AVATAR_PICKER = "toAvatarPicker"
 
 
 //User Defaults
